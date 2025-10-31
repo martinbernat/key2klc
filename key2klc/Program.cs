@@ -68,6 +68,9 @@ class KeyboardExtractor
             String layoutHexString = ((UInt32)GetNonPublicProperty(k, "m_hkl"))
                 .ToString("X");
 
+            if (!(name.ToLower().Contains("slovak") || name.ToLower().Contains("czech"))) 
+                continue;
+
             Console.WriteLine(
                     "Saving {0} {1}, keyboard {2} of {3}",
                     layoutHexString, name, i, keyboards.Count);
